@@ -1,6 +1,6 @@
-package com.techprimers.mybatis.springbootmybatis.mapper;
+package com.mapper;
 
-import com.techprimers.mybatis.springbootmybatis.model.Users;
+import com.model.Users;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;

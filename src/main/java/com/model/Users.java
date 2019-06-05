@@ -1,4 +1,4 @@
-package com.techprimers.mybatis.springbootmybatis.model;
+package com.model;
 
 public class Users {
 

@@ -1,7 +1,7 @@
-package com.techprimers.mybatis.springbootmybatis.resource;
+package com.resource;
 
-import com.techprimers.mybatis.springbootmybatis.mapper.UsersMapper;
-import com.techprimers.mybatis.springbootmybatis.model.Users;
+import com.mapper.UsersMapper;
+import com.model.Users;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

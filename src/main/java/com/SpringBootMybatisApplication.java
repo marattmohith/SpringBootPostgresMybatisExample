@@ -1,6 +1,6 @@
-package com.techprimers.mybatis.springbootmybatis;
+package com;
 
-import com.techprimers.mybatis.springbootmybatis.model.Users;
+import com.model.Users;
 import org.apache.ibatis.type.MappedTypes;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
