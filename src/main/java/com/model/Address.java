@@ -5,8 +5,17 @@ public class Address {
     private Integer addressId;
     private String streetAddress;
     private Integer personId;
+    private Person person;
 
     public Address() {
+    }
+
+    public Address(String streetAddress) {
+        this.streetAddress = streetAddress;
+    }
+
+    public Address(int i, String name) {
+        this.streetAddress = name;
     }
 
     public Integer getPersonId() {
@@ -17,22 +26,12 @@ public class Address {
         this.personId = personId;
     }
 
-    public Address(String streetAddress) {
-        this.streetAddress = streetAddress;
-    }
-
     public Person getPerson() {
         return person;
     }
 
     public void setPerson(Person person) {
         this.person = person;
-    }
-
-    private Person person;
-
-    public Address(int i, String name) {
-        this.streetAddress = name;
     }
 
     public Integer getAddressId() {

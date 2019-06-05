@@ -1,4 +1,5 @@
 package com.mapper;
+
 import com.model.Address;
 import com.model.Person;
 import org.apache.ibatis.annotations.*;
@@ -10,9 +11,9 @@ public interface AddressMapper {
     public Integer saveAddress(Address address);
 
     @Select("SELECT addressId, streetAddress FROM Address WHERE addressId = #{addressId}")
-    @Results(value = { @Result(property = "addressId", column = "addressId"),
+    @Results(value = {@Result(property = "addressId", column = "addressId"),
             @Result(property = "streetAddress", column = "streetAddress"),
-            @Result(property = "person", column = "personId", javaType = Person.class, one = @One(select = "getPerson")) })
+            @Result(property = "person", column = "personId", javaType = Person.class, one = @One(select = "getPerson"))})
     Address getAddresses(Integer addressID);
 
     @Select("SELECT personId FROM address WHERE addressId = #{addressId})")

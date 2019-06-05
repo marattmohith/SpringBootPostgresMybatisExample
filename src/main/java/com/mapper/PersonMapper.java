@@ -1,10 +1,9 @@
 package com.mapper;
 
-import model.Address;
-import model.Person;
+import com.model.Address;
+import com.model.Person;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.mapping.StatementType;
-import util.MyMybatisUtil;
 
 import java.util.List;
 import java.util.Map;
@@ -24,7 +23,7 @@ public interface PersonMapper {
     Person getPerson(Integer personId);
 
     @Select("Select personId,name from Person where personId=#{personId}")
-    @Results(value = { @Result(property = "personId", column = "personId"), @Result(property = "name", column = "name"),
+    @Results(value = {@Result(property = "personId", column = "personId"), @Result(property = "name", column = "name"),
             @Result(property = "addresses", javaType = List.class, column = "personId", many = @Many(select = "getAddresses"))
 
     })
@@ -37,8 +36,6 @@ public interface PersonMapper {
     @MapKey("personId")
     Map<Integer, Person> getAllPerson();
 
-    @SelectProvider(type = MyMybatisUtil.class, method = "getPersonByName")
-    public Person getPersonByName(String name);
 
     @Select(value = "{ CALL getPersonByProc( #{personId, mode=IN, jdbcType=INTEGER})}")
     @Options(statementType = StatementType.CALLABLE)
